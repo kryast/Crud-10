@@ -1,8 +1,12 @@
 package services
 
-import "github.com/kryast/Crud-10.git/repositories"
+import (
+	"github.com/kryast/Crud-10.git/models"
+	"github.com/kryast/Crud-10.git/repositories"
+)
 
 type BookService interface {
+	Create(book *models.Book) error
 }
 
 type bookService struct {
@@ -11,4 +15,8 @@ type bookService struct {
 
 func NewBookService(repo repositories.BookRepository) BookService {
 	return &bookService{repo}
+}
+
+func (bs *bookService) Create(book *models.Book) error {
+	return bs.repo.Create(book)
 }
