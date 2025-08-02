@@ -9,3 +9,8 @@ curl -X POST http://localhost:8080/books \
   "published_year": 2022,
   "price": 350.50
 }'
+
+
+GET
+curl http://localhost:8080/book
+curl http://localhost:8080/book/1
