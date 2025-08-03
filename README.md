@@ -1,7 +1,7 @@
 CRUD ke-10
 
 POST
-curl -X POST http://localhost:8080/books \
+curl -X POST http://localhost:8080/book \
 -H "Content-Type: application/json" \
 -d '{
   "title": "Go Programming",
@@ -17,7 +17,7 @@ curl http://localhost:8080/book/1
 
 
 PUT
-curl -X PUT http://localhost:8080/books/1 \
+curl -X PUT http://localhost:8080/book/1 \
 -H "Content-Type: application/json" \
 -d '{
   "title": "Updated Title",
@@ -25,3 +25,7 @@ curl -X PUT http://localhost:8080/books/1 \
   "published_year": 2023,
   "price": 400
 }'
+
+
+DELETE
+curl -X DELETE http://localhost:8080/book/1
